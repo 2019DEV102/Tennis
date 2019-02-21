@@ -19,26 +19,22 @@ struct GameEntity {
     /// Minimum number of advantage points to have for a player to win.
     static let minAdvantagePointsToWin = 2
 
+    /// Minimum player points for the game to be considered a deuce.
+    static var minPointsForDeuce = 3
+
     /// First player.
     let player1: PlayerEntity
     /// Second player.
     let player2: PlayerEntity
 
-    /// Number of points gained by first player.
-    var player1Points: Int {
-        didSet {
-            pointsDidChange()
-        }
-    }
-    /// Number of points gained by second player.
-    var player2Points: Int {
-        didSet {
-            pointsDidChange()
-        }
-    }
-
     /// State of the game. Computed based of the number of points gained by each player.
     private(set) var state: GameStateEntity
+
+    /// Displayed score, such as 15 - 0.
+    private(set) var displayedScore = "0 - 0"
+
+    private var player1Points: Int
+    private var player2Points: Int
 
     /// Construct a game.
     /// - Parameter player1: First player.
@@ -51,6 +47,7 @@ struct GameEntity {
         player2Points = GameEntity.defaultPoints
 
         state = .playing
+        displayedScore = createDisplayedScore()
     }
 
     /// Simulate a point win for a given player.
@@ -68,10 +65,9 @@ struct GameEntity {
         default:
             fatalError("Player \(player) is not part of this game: \(self)")
         }
-    }
 
-    private mutating func pointsDidChange() {
         state = computeState()
+        displayedScore = createDisplayedScore()
     }
 
     private func computeState() -> GameStateEntity {
@@ -91,6 +87,52 @@ struct GameEntity {
         let winner = player1Points > player2Points ? player1 : player2
         return .finished(winner)
     }
+    
+    private func createDisplayedScore() -> String {
+        if case .finished(let winner) = state {
+            return "Game won by \(winner.name)"
+        }
+
+        let maxPoints = max(player1Points, player2Points)
+        let minPointsForDeuce = GameEntity.minPointsForDeuce
+
+        switch (player1Points, player2Points) {
+        // Both players have < 3 points
+        case (_, _) where maxPoints < minPointsForDeuce: fallthrough
+        // Only one player has 3 points
+        case (_, _) where maxPoints == minPointsForDeuce && player1Points != player2Points:
+            return "\(player1Points.toDisplayPoints()) - \(player2Points.toDisplayPoints())"
+        // Both players have equal points > 3(= deuce)
+        case (_, _) where maxPoints >= minPointsForDeuce && player1Points == player2Points:
+            return "Deuce"
+        // Player 1 has the advantage
+        case (_, _) where maxPoints >= minPointsForDeuce && player1Points > player2Points:
+            return "Advantage for \(player1.name)"
+        // Player 2 has the advantage
+        case (_, _) where maxPoints >= minPointsForDeuce && player1Points < player2Points:
+            return "Advantage for \(player2.name)"
+        // Unhandled cases
+        default:
+            fatalError("Unhandled presentation model case")
+        }
+    }
+
 }
 
 extension GameEntity: Equatable {}
+
+extension Int {
+    /// Converts game points(0, 1, 2, 3) into tennis points(0, 15, 30, 40)
+    fileprivate func toDisplayPoints() -> Int {
+        switch self {
+        case 1:
+            return 15
+        case 2:
+            return 30
+        case 3:
+            return 40
+        default:
+            return self
+        }
+    }
+}

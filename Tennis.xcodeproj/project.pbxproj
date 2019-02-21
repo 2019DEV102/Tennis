@@ -17,10 +17,9 @@
 		436AB2C022197946005D3CBD /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BF22197946005D3CBD /* GameEntity.swift */; };
 		436AB2D422199C43005D3CBD /* ScoreboardPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D322199C43005D3CBD /* ScoreboardPresentationModel.swift */; };
 		436AB2D722199C8A005D3CBD /* ScoreboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */; };
-		436AB2D922199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D822199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift */; };
-		436AB2DE22199D8D005D3CBD /* ScoreboardPresentationModelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2DD22199D8D005D3CBD /* ScoreboardPresentationModelFactoryTests.swift */; };
 		436AB2E122199E95005D3CBD /* ScoreboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2E022199E95005D3CBD /* ScoreboardViewModelTests.swift */; };
 		436AB2E322199FE7005D3CBD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2E222199FE7005D3CBD /* MainCoordinator.swift */; };
+		43FDA60E221F001500CF5066 /* GameEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDA60D221F001500CF5066 /* GameEntityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +47,9 @@
 		436AB2BF22197946005D3CBD /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		436AB2D322199C43005D3CBD /* ScoreboardPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPresentationModel.swift; sourceTree = "<group>"; };
 		436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewModel.swift; sourceTree = "<group>"; };
-		436AB2D822199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPresentationModelFactory.swift; sourceTree = "<group>"; };
-		436AB2DD22199D8D005D3CBD /* ScoreboardPresentationModelFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPresentationModelFactoryTests.swift; sourceTree = "<group>"; };
 		436AB2E022199E95005D3CBD /* ScoreboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewModelTests.swift; sourceTree = "<group>"; };
 		436AB2E222199FE7005D3CBD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		43FDA60D221F001500CF5066 /* GameEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +109,7 @@
 		436AB2A3221971C4005D3CBD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				436AB2B7221978B3005D3CBD /* Entities */,
 				436AB2A5221971D9005D3CBD /* GUI */,
 				436AB2A4221971D0005D3CBD /* Application */,
 			);
@@ -129,7 +128,6 @@
 		436AB2A5221971D9005D3CBD /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				436AB2B7221978B3005D3CBD /* Entities */,
 				436AB2D022199BBC005D3CBD /* Scoreboard */,
 				436AB2E42219A428005D3CBD /* Storyboards */,
 			);
@@ -180,6 +178,7 @@
 		436AB2AB22197242005D3CBD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				43FDA60C221F000A00CF5066 /* Entities */,
 				436AB2DA22199D68005D3CBD /* GUI */,
 			);
 			path = Tests;
@@ -192,7 +191,8 @@
 				436AB2BD22197935005D3CBD /* GameStateEntity.swift */,
 				436AB2BF22197946005D3CBD /* GameEntity.swift */,
 			);
-			path = Entities;
+			name = Entities;
+			path = GUI/Entities;
 			sourceTree = "<group>";
 		};
 		436AB2D022199BBC005D3CBD /* Scoreboard */ = {
@@ -225,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */,
-				436AB2D822199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,7 +240,6 @@
 		436AB2DB22199D6C005D3CBD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				436AB2DD22199D8D005D3CBD /* ScoreboardPresentationModelFactoryTests.swift */,
 				436AB2E022199E95005D3CBD /* ScoreboardViewModelTests.swift */,
 			);
 			path = ViewModel;
@@ -262,6 +260,14 @@
 				436AB28722197111005D3CBD /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		43FDA60C221F000A00CF5066 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				43FDA60D221F001500CF5066 /* GameEntityTests.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +375,6 @@
 				436AB2E322199FE7005D3CBD /* MainCoordinator.swift in Sources */,
 				436AB28622197111005D3CBD /* ScoreboardViewController.swift in Sources */,
 				436AB2C022197946005D3CBD /* GameEntity.swift in Sources */,
-				436AB2D922199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift in Sources */,
 				436AB2BC2219791F005D3CBD /* PlayerEntity.swift in Sources */,
 				436AB28422197111005D3CBD /* AppDelegate.swift in Sources */,
 				436AB2D422199C43005D3CBD /* ScoreboardPresentationModel.swift in Sources */,
@@ -382,7 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				436AB2E122199E95005D3CBD /* ScoreboardViewModelTests.swift in Sources */,
-				436AB2DE22199D8D005D3CBD /* ScoreboardPresentationModelFactoryTests.swift in Sources */,
+				43FDA60E221F001500CF5066 /* GameEntityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

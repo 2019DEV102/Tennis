@@ -10,7 +10,7 @@ import Foundation
 /// ViewModel for Scoreboard screen.
 final class ScoreboardViewModel {
     /// Presentation model for the Scoreboard view.
-    private(set) var presentationModel: ScoreboardPresentationModel! {
+    private(set) var presentationModel = ScoreboardPresentationModel() {
         didSet {
             presentationModelDidChange(presentationModel)
         }
@@ -31,29 +31,35 @@ final class ScoreboardViewModel {
         self.player2 = player2
 
         gameEntity = GameEntity(player1: player1, player2: player2)
-        updateView()
+        updatePresentationModel()
     }
 
     /// Simulate a point win for the first player.
     func addPointWinForPlayer1() {
         gameEntity.addPointWin(for: player1)
-        updateView()
+        updatePresentationModel()
     }
 
     /// Simulate a point win for the second player.
     func addPointWinForPlayer2() {
         gameEntity.addPointWin(for: player2)
-        updateView()
+        updatePresentationModel()
     }
 
     /// Start a new game.
     func reset() {
         gameEntity = GameEntity(player1: player1, player2: player2)
-        updateView()
+        updatePresentationModel()
     }
 
-    private func updateView() {
-        let presentationFactory = ScoreboardPresentationModelFactory()
-        presentationModel = presentationFactory.createPresentationModel(from: gameEntity)
+    private func updatePresentationModel() {
+        switch gameEntity.state {
+        case .playing:
+            presentationModel.isFinished = false
+            presentationModel.score = gameEntity.displayedScore
+        case .finished(let winner):
+            presentationModel.isFinished = true
+            presentationModel.score = "Game won by \(winner.name)"
+        }
     }
 }
