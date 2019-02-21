@@ -12,15 +12,9 @@
 		436AB28922197111005D3CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436AB28722197111005D3CBD /* Main.storyboard */; };
 		436AB28B22197113005D3CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436AB28A22197113005D3CBD /* Assets.xcassets */; };
 		436AB28E22197113005D3CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436AB28C22197113005D3CBD /* LaunchScreen.storyboard */; };
-		436AB2B22219785F005D3CBD /* GameEngineFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2B12219785F005D3CBD /* GameEngineFactoryProtocol.swift */; };
-		436AB2B422197894005D3CBD /* GameEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2B322197894005D3CBD /* GameEngineProtocol.swift */; };
-		436AB2B6221978A4005D3CBD /* GameEngineObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2B5221978A4005D3CBD /* GameEngineObserver.swift */; };
-		436AB2BA221978E6005D3CBD /* GameEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2B9221978E6005D3CBD /* GameEntityTests.swift */; };
 		436AB2BC2219791F005D3CBD /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BB2219791F005D3CBD /* PlayerEntity.swift */; };
 		436AB2BE22197935005D3CBD /* GameStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BD22197935005D3CBD /* GameStateEntity.swift */; };
 		436AB2C022197946005D3CBD /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BF22197946005D3CBD /* GameEntity.swift */; };
-		436AB2C7221993AF005D3CBD /* SimplifiedGameEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2C6221993AF005D3CBD /* SimplifiedGameEngineFactory.swift */; };
-		436AB2C922199683005D3CBD /* SimplifiedGameEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2C822199683005D3CBD /* SimplifiedGameEngineTests.swift */; };
 		436AB2CB221996C5005D3CBD /* SimplifiedGameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */; };
 		436AB2D422199C43005D3CBD /* ScoreboardPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D322199C43005D3CBD /* ScoreboardPresentationModel.swift */; };
 		436AB2D722199C8A005D3CBD /* ScoreboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */; };
@@ -50,15 +44,9 @@
 		436AB28F22197113005D3CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		436AB29422197114005D3CBD /* TennisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		436AB29A22197114005D3CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		436AB2B12219785F005D3CBD /* GameEngineFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineFactoryProtocol.swift; sourceTree = "<group>"; };
-		436AB2B322197894005D3CBD /* GameEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineProtocol.swift; sourceTree = "<group>"; };
-		436AB2B5221978A4005D3CBD /* GameEngineObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineObserver.swift; sourceTree = "<group>"; };
-		436AB2B9221978E6005D3CBD /* GameEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntityTests.swift; sourceTree = "<group>"; };
 		436AB2BB2219791F005D3CBD /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		436AB2BD22197935005D3CBD /* GameStateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateEntity.swift; sourceTree = "<group>"; };
 		436AB2BF22197946005D3CBD /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
-		436AB2C6221993AF005D3CBD /* SimplifiedGameEngineFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiedGameEngineFactory.swift; sourceTree = "<group>"; };
-		436AB2C822199683005D3CBD /* SimplifiedGameEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiedGameEngineTests.swift; sourceTree = "<group>"; };
 		436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiedGameEngine.swift; sourceTree = "<group>"; };
 		436AB2D322199C43005D3CBD /* ScoreboardPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPresentationModel.swift; sourceTree = "<group>"; };
 		436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewModel.swift; sourceTree = "<group>"; };
@@ -196,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				436AB2DA22199D68005D3CBD /* GUI */,
-				436AB2AF22197815005D3CBD /* Engine */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -204,29 +191,9 @@
 		436AB2AE22197804005D3CBD /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				436AB2B022197844005D3CBD /* Interface */,
-				436AB2C122197E49005D3CBD /* Simplified */,
+				436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */,
 			);
 			path = Engine;
-			sourceTree = "<group>";
-		};
-		436AB2AF22197815005D3CBD /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				436AB2B8221978C1005D3CBD /* Entities */,
-				436AB2C222197E64005D3CBD /* Simplified */,
-			);
-			path = Engine;
-			sourceTree = "<group>";
-		};
-		436AB2B022197844005D3CBD /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				436AB2B12219785F005D3CBD /* GameEngineFactoryProtocol.swift */,
-				436AB2B322197894005D3CBD /* GameEngineProtocol.swift */,
-				436AB2B5221978A4005D3CBD /* GameEngineObserver.swift */,
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 		436AB2B7221978B3005D3CBD /* Entities */ = {
@@ -237,31 +204,6 @@
 				436AB2BF22197946005D3CBD /* GameEntity.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		436AB2B8221978C1005D3CBD /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				436AB2B9221978E6005D3CBD /* GameEntityTests.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		436AB2C122197E49005D3CBD /* Simplified */ = {
-			isa = PBXGroup;
-			children = (
-				436AB2C6221993AF005D3CBD /* SimplifiedGameEngineFactory.swift */,
-				436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */,
-			);
-			path = Simplified;
-			sourceTree = "<group>";
-		};
-		436AB2C222197E64005D3CBD /* Simplified */ = {
-			isa = PBXGroup;
-			children = (
-				436AB2C822199683005D3CBD /* SimplifiedGameEngineTests.swift */,
-			);
-			path = Simplified;
 			sourceTree = "<group>";
 		};
 		436AB2D022199BBC005D3CBD /* Scoreboard */ = {
@@ -437,13 +379,9 @@
 				436AB2D722199C8A005D3CBD /* ScoreboardViewModel.swift in Sources */,
 				436AB2E322199FE7005D3CBD /* MainCoordinator.swift in Sources */,
 				436AB28622197111005D3CBD /* ScoreboardViewController.swift in Sources */,
-				436AB2B422197894005D3CBD /* GameEngineProtocol.swift in Sources */,
 				436AB2C022197946005D3CBD /* GameEntity.swift in Sources */,
 				436AB2D922199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift in Sources */,
-				436AB2B6221978A4005D3CBD /* GameEngineObserver.swift in Sources */,
-				436AB2C7221993AF005D3CBD /* SimplifiedGameEngineFactory.swift in Sources */,
 				436AB2BC2219791F005D3CBD /* PlayerEntity.swift in Sources */,
-				436AB2B22219785F005D3CBD /* GameEngineFactoryProtocol.swift in Sources */,
 				436AB2CB221996C5005D3CBD /* SimplifiedGameEngine.swift in Sources */,
 				436AB28422197111005D3CBD /* AppDelegate.swift in Sources */,
 				436AB2D422199C43005D3CBD /* ScoreboardPresentationModel.swift in Sources */,
@@ -456,9 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				436AB2E122199E95005D3CBD /* ScoreboardViewModelTests.swift in Sources */,
-				436AB2C922199683005D3CBD /* SimplifiedGameEngineTests.swift in Sources */,
 				436AB2DE22199D8D005D3CBD /* ScoreboardPresentationModelFactoryTests.swift in Sources */,
-				436AB2BA221978E6005D3CBD /* GameEntityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

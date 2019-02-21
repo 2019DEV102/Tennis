@@ -12,7 +12,6 @@ import UIKit
 final class MainCoordinator {
 
     private let window: UIWindow
-    private let gameEngineFactory = SimplifiedGameEngineFactory()
 
     init() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -27,9 +26,7 @@ final class MainCoordinator {
 
         let player1 = PlayerEntity("Player 1")
         let player2 = PlayerEntity("Player 2")
-        let viewModel = ScoreboardViewModel(gameEngineFactory: gameEngineFactory,
-                                            player1: player1,
-                                            player2: player2)
+        let viewModel = ScoreboardViewModel(player1: player1, player2: player2)
         viewController.viewModel = viewModel
 
         window.rootViewController = viewController
