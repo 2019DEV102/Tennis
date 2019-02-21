@@ -38,11 +38,7 @@ Unit tests covering the business and presentation logic.
 
 ## Architecture
 
-Layered architecture based on [SOLID Principles](https://en.wikipedia.org/wiki/SOLID).
-
-### GameEngine
-
-Component defining and implementing the behavior of a simplified tennis game.
+This project has been refactored from a layered architecture based on [SOLID Principles](https://en.wikipedia.org/wiki/SOLID) to a simple one with only MVVM pattern for GUI.
 
 ### Scoreboard GUI
 

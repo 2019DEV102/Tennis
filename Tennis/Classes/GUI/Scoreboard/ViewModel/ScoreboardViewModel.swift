@@ -20,7 +20,7 @@ final class ScoreboardViewModel {
 
     private let player1: PlayerEntity
     private let player2: PlayerEntity
-    private var gameEngine: SimplifiedGameEngine!
+    private var gameEntity: GameEntity!
 
     /// Construct the view model.
     /// - Parameter player1: First player.
@@ -30,34 +30,30 @@ final class ScoreboardViewModel {
         self.player1 = player1
         self.player2 = player2
 
-        createEngine()
+        gameEntity = GameEntity(player1: player1, player2: player2)
+        updateView()
     }
 
     /// Simulate a point win for the first player.
     func addPointWinForPlayer1() {
-        gameEngine.addPointWin(for: gameEngine.player1)
+        gameEntity.addPointWin(for: player1)
         updateView()
     }
 
     /// Simulate a point win for the second player.
     func addPointWinForPlayer2() {
-        gameEngine.addPointWin(for: gameEngine.player2)
+        gameEntity.addPointWin(for: player2)
         updateView()
     }
 
     /// Start a new game.
     func reset() {
-        createEngine()
+        gameEntity = GameEntity(player1: player1, player2: player2)
+        updateView()
     }
 
     private func updateView() {
         let presentationFactory = ScoreboardPresentationModelFactory()
-        presentationModel = presentationFactory.createPresentationModel(from: gameEngine.game)
-    }
-    
-    private func createEngine() {
-        gameEngine = SimplifiedGameEngine(player1: player1, player2: player2)
-        let presentationFactory = ScoreboardPresentationModelFactory()
-        presentationModel = presentationFactory.createPresentationModel(from: gameEngine.game)
+        presentationModel = presentationFactory.createPresentationModel(from: gameEntity)
     }
 }

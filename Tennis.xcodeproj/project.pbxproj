@@ -15,7 +15,6 @@
 		436AB2BC2219791F005D3CBD /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BB2219791F005D3CBD /* PlayerEntity.swift */; };
 		436AB2BE22197935005D3CBD /* GameStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BD22197935005D3CBD /* GameStateEntity.swift */; };
 		436AB2C022197946005D3CBD /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2BF22197946005D3CBD /* GameEntity.swift */; };
-		436AB2CB221996C5005D3CBD /* SimplifiedGameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */; };
 		436AB2D422199C43005D3CBD /* ScoreboardPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D322199C43005D3CBD /* ScoreboardPresentationModel.swift */; };
 		436AB2D722199C8A005D3CBD /* ScoreboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */; };
 		436AB2D922199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AB2D822199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift */; };
@@ -47,7 +46,6 @@
 		436AB2BB2219791F005D3CBD /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		436AB2BD22197935005D3CBD /* GameStateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateEntity.swift; sourceTree = "<group>"; };
 		436AB2BF22197946005D3CBD /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
-		436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiedGameEngine.swift; sourceTree = "<group>"; };
 		436AB2D322199C43005D3CBD /* ScoreboardPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPresentationModel.swift; sourceTree = "<group>"; };
 		436AB2D622199C8A005D3CBD /* ScoreboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewModel.swift; sourceTree = "<group>"; };
 		436AB2D822199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPresentationModelFactory.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				436AB2A5221971D9005D3CBD /* GUI */,
-				436AB2AE22197804005D3CBD /* Engine */,
 				436AB2A4221971D0005D3CBD /* Application */,
 			);
 			path = Classes;
@@ -186,14 +183,6 @@
 				436AB2DA22199D68005D3CBD /* GUI */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		436AB2AE22197804005D3CBD /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				436AB2CA221996C5005D3CBD /* SimplifiedGameEngine.swift */,
-			);
-			path = Engine;
 			sourceTree = "<group>";
 		};
 		436AB2B7221978B3005D3CBD /* Entities */ = {
@@ -382,7 +371,6 @@
 				436AB2C022197946005D3CBD /* GameEntity.swift in Sources */,
 				436AB2D922199CBA005D3CBD /* ScoreboardPresentationModelFactory.swift in Sources */,
 				436AB2BC2219791F005D3CBD /* PlayerEntity.swift in Sources */,
-				436AB2CB221996C5005D3CBD /* SimplifiedGameEngine.swift in Sources */,
 				436AB28422197111005D3CBD /* AppDelegate.swift in Sources */,
 				436AB2D422199C43005D3CBD /* ScoreboardPresentationModel.swift in Sources */,
 				436AB2BE22197935005D3CBD /* GameStateEntity.swift in Sources */,

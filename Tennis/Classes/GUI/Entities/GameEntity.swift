@@ -53,6 +53,23 @@ struct GameEntity {
         state = .playing
     }
 
+    /// Simulate a point win for a given player.
+    /// - Parameter player: Player who won the point.
+    mutating func addPointWin(for player: PlayerEntity) {
+        guard case .playing = state else {
+            fatalError("Can't add a point win to a finished game")
+        }
+        
+        switch player {
+        case player1:
+            player1Points += 1
+        case player2:
+            player2Points += 1
+        default:
+            fatalError("Player \(player) is not part of this game: \(self)")
+        }
+    }
+
     private mutating func pointsDidChange() {
         state = computeState()
     }
