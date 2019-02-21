@@ -144,6 +144,7 @@
 		436AB2A5221971D9005D3CBD /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				436AB2B7221978B3005D3CBD /* Entities */,
 				436AB2D022199BBC005D3CBD /* Scoreboard */,
 				436AB2E42219A428005D3CBD /* Storyboards */,
 			);
@@ -203,7 +204,6 @@
 		436AB2AE22197804005D3CBD /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				436AB2B7221978B3005D3CBD /* Entities */,
 				436AB2B022197844005D3CBD /* Interface */,
 				436AB2C122197E49005D3CBD /* Simplified */,
 			);
