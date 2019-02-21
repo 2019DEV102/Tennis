@@ -93,30 +93,28 @@ struct GameEntity {
             return "Game won by \(winner.name)"
         }
 
-        let maxPoints = max(player1Points, player2Points)
-        let minPointsForDeuce = GameEntity.minPointsForDeuce
-
-        switch (player1Points, player2Points) {
-        // Both players have < 3 points
-        case (_, _) where maxPoints < minPointsForDeuce: fallthrough
-        // Only one player has 3 points
-        case (_, _) where maxPoints == minPointsForDeuce && player1Points != player2Points:
-            return "\(player1Points.toDisplayPoints()) - \(player2Points.toDisplayPoints())"
-        // Both players have equal points > 3(= deuce)
-        case (_, _) where maxPoints >= minPointsForDeuce && player1Points == player2Points:
+        if isDeuce() {
             return "Deuce"
-        // Player 1 has the advantage
-        case (_, _) where maxPoints >= minPointsForDeuce && player1Points > player2Points:
-            return "Advantage for \(player1.name)"
-        // Player 2 has the advantage
-        case (_, _) where maxPoints >= minPointsForDeuce && player1Points < player2Points:
-            return "Advantage for \(player2.name)"
-        // Unhandled cases
-        default:
-            fatalError("Unhandled presentation model case")
         }
+        
+        if hasAdvantage(player1Points, over: player2Points) {
+            return "Advantage for \(player1.name)"
+        }
+
+        if hasAdvantage(player2Points, over: player1Points) {
+            return "Advantage for \(player2.name)"
+        }
+
+        return "\(player1Points.toDisplayPoints()) - \(player2Points.toDisplayPoints())"
     }
 
+    private func isDeuce() -> Bool {
+        return (player1Points == player2Points) && (player1Points >= GameEntity.minPointsForDeuce)
+    }
+    
+    private func hasAdvantage(_ player1Points: Int, over player2Points: Int) -> Bool {
+        return (player1Points > player2Points) && (player1Points >= GameEntity.minPointsForDeuce)
+    }
 }
 
 extension GameEntity: Equatable {}
